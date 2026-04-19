@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffe4ec;
+}
+header {
+  background: #ffb6c1;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+section {
+  padding: 40px;
+  text-align: center;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, button {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+}
+button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body><header>
+  <h1>YOUR NAME</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><section id="login">
+  <div class="card">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="tel" id="phone" placeholder="Enter Phone Number" required>
+    <button onclick="verifyUser()">Login</button>
+    <p id="loginMsg"></p>
+  </div>
+</section><section id="portfolio" style="display:none;"><section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <img src="your-photo.jpg" width="150" style="border-radius:50%;">
+    <p>Write about yourself here...</p>
+  </div>
+</section><section id="skills">
+  <div class="card">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, etc.</p>
+  </div>
+</section><section id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+    <p>Project 1 - Description</p>
+    <p>Project 2 - Description</p>
+  </div>
+</section><section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: hridhyasunil2029@cs.sjcetpalai.ac.in </p>
+    <p>Phone: 6238775189</p>
+    <p>LinkedIn: https://linkedin.com/in/</p>
+  </div>
+</section></section><script>
+function verifyUser() {
+  let email = document.getElementById('email').value;
+  let phone = document.getElementById('phone').value;
+  let msg = document.getElementById('loginMsg');
+
+  if(email.includes('@') && phone.length >= 10) {
+    msg.innerHTML = "Login Successful!";
+    document.getElementById('portfolio').style.display = 'block';
+    document.getElementById('login').style.display = 'none';
+  } else {
+    msg.innerHTML = "Invalid Email or Phone Number";
+    msg.style.color = 'red';
+  }
+}
+</script></body>
+</html>
